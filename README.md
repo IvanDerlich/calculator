@@ -10,7 +10,7 @@ A calculator with these operacions:
 
 And a few minor operations to aid the execution of above operations
 
-## [Live Version](https://ivanderlich-calculator.herokuapp.com)
+## [Live Version](https://ivanderlich-calculator.netlify.app/)
 
 ## Instalation
 

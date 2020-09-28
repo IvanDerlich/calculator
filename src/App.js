@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      <p> Hello world!</p>
+      <p> Calculator App: Hello world!</p>
     </div>
   );
 }

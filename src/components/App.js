@@ -7,10 +7,12 @@ import './App.css';
 function App() {
   return (
     <div className="App" id="app">
-      <Display result="Testing Result" />
+      <Display />
       <ButtonPanel />
     </div>
   );
 }
 
 export default App;
+
+

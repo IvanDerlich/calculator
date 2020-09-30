@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 import './Button.css';
 
 function Button({ buttonName }) {
+  const style = buttonName === '0'
+    ? { width: '50%' }
+    : {};
+
   return (
-    <div className="Button" id="button">
+    <div className="button" style={style} id="button">
       <p>
         { buttonName}
       </p>

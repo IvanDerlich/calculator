@@ -4,7 +4,7 @@ import './Display.css';
 
 function Display({ result }) {
   return (
-    <div className="Display" id="button-panel">      
+    <div className="Display" id="button-panel">
       <p>
         Display Component:
         {result}

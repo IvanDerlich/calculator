@@ -12,12 +12,8 @@ function Button({ buttonName }) {
   );
 }
 
-Button.defaultProps = {
-  buttonName: 'defaultName',
-};
-
 Button.propTypes = {
-  buttonName: PropTypes.string,
+  buttonName: PropTypes.string.isRequired,
 };
 
 export default Button;

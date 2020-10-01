@@ -19,13 +19,12 @@ function Button({ buttonName, wide, color }) {
 }
 
 Button.defaultProps = {
-  buttonName: 'defaultName',
   wide: false,
   color: false,
 };
 
 Button.propTypes = {
-  buttonName: PropTypes.string,
+  buttonName: PropTypes.string.isRequired,
   wide: PropTypes.bool,
   color: PropTypes.bool,
 };

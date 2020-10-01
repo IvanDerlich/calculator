@@ -4,11 +4,9 @@ import './Button.css';
 
 function Button({ buttonName }) {
   return (
-    <div className="Button" id="button">
-      <p>
-        { buttonName}
-      </p>
-    </div>
+    <button type="button" className="Button" id="button">
+      {buttonName}
+    </button>
   );
 }
 

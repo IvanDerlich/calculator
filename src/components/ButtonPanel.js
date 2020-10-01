@@ -30,7 +30,7 @@ function ButtonPanel() {
         <Button buttonName="+" />
       </div>
       <div className="group">
-        <Button buttonName="0" color wide />
+        <Button buttonName="0" wide color />
         <Button buttonName="." color />
         <Button buttonName="=" />
       </div>

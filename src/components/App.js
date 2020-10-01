@@ -1,10 +1,14 @@
 import React from 'react';
+import Display from './Display';
+import ButtonPanel from './ButtonPanel';
+
 import './App.css';
 
 function App() {
   return (
     <div className="App" id="app">
-      <p> Calculator App: Hello world!</p>
+      <Display result="Testing Result" />
+      <ButtonPanel />
     </div>
   );
 }

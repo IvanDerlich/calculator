@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 import './Button.css';
 
 function Button({ buttonName, wide, color }) {
-  const styles = wide
-    ? { width: '50%' }
-    : { width: '25%' };
 
-  styles.backgroundColor = color
-    ? '#dfdfdf'
-    : '#F29444';
+  let className = 'button';
+
+  className += wide
+    ? ' wide'
+    : '';
+
+  const styles = { backgroundColor: color };
 
   return (
-    <div className="button" style={styles} id="button">
+    <div className={className} style={styles} id="button">
       <p>{ buttonName}</p>
     </div>
   );
@@ -20,13 +21,13 @@ function Button({ buttonName, wide, color }) {
 
 Button.defaultProps = {
   wide: false,
-  color: false,
+  color: 'orange',
 };
 
 Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
   wide: PropTypes.bool,
-  color: PropTypes.bool,
+  color: PropTypes.string,
 };
 
 export default Button;

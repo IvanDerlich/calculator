@@ -6,32 +6,32 @@ function ButtonPanel() {
   return (
     <div className="button-panel" id="button-panel">
       <div className="group">
-        <Button buttonName="AC" color />
-        <Button buttonName="+/-" color />
-        <Button buttonName="%" color />
+        <Button buttonName="AC" color="#dfdfdf" />
+        <Button buttonName="+/-" color="#dfdfdf" />
+        <Button buttonName="%" color="#dfdfdf" />
         <Button buttonName="÷" />
       </div>
       <div className="group">
-        <Button buttonName="7" color />
-        <Button buttonName="8" color />
-        <Button buttonName="9" color />
+        <Button buttonName="7" color="#dfdfdf" />
+        <Button buttonName="8" color="#dfdfdf" />
+        <Button buttonName="9" color="#dfdfdf" />
         <Button buttonName="x" />
       </div>
       <div className="group">
-        <Button buttonName="4" color />
-        <Button buttonName="5" color />
-        <Button buttonName="6" color />
+        <Button buttonName="4" color="#dfdfdf" />
+        <Button buttonName="5" color="#dfdfdf" />
+        <Button buttonName="6" color="#dfdfdf" />
         <Button buttonName="-" />
       </div>
       <div className="group">
-        <Button buttonName="1" color />
-        <Button buttonName="2" color />
-        <Button buttonName="3" color />
+        <Button buttonName="1" color="#dfdfdf" />
+        <Button buttonName="2" color="#dfdfdf" />
+        <Button buttonName="3" color="#dfdfdf" />
         <Button buttonName="+" />
       </div>
       <div className="group">
-        <Button buttonName="0" wide color />
-        <Button buttonName="." color />
+        <Button buttonName="0" wide color="#dfdfdf" />
+        <Button buttonName="." color="#dfdfdf" />
         <Button buttonName="=" />
       </div>
     </div>

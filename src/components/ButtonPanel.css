@@ -1,3 +1,11 @@
-.ButtonPanel {
-  text-align: center;
+.button-panel {
+  display: flex;
+  width: 700px;
+  flex-direction: column;
+}
+
+.group {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
 }

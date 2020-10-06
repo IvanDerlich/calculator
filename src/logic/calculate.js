@@ -1,9 +1,8 @@
 import operate from './operate';
 
-const calculate = (calculatorDataObject, buttonName) => {
-  let { total } = calculatorDataObject;
-  let { next } = calculatorDataObject;
-  const { operation } = calculatorDataObject;
+const calculate = (calculatorData, buttonName) => {
+  let { total, next } = calculatorData;
+  const { operation } = calculatorData;
 
   switch (buttonName) {
     case '+/-':
@@ -18,15 +17,12 @@ const calculate = (calculatorDataObject, buttonName) => {
       next = '0';
       total = '0';
       break;
-    case '=':
-      total = operate(total, next, operation);
-      break;
     case '.':
       next += '.';
       break;
     default:
+      total = operate(total, next, operation);
   }
-
   return { total, next, operation };
 };
 

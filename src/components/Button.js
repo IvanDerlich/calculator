@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './Button.css';
 
 function Button({ buttonName, wide, color }) {
-
   let className = 'button';
 
   className += wide

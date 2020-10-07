@@ -4,7 +4,8 @@ import './Footer.css';
 function Footer() {
   return (
     <div className="Footer" id="footer">
-      <p> Footer Component </p>
+      Made by:
+      <a href="https://www.ivanderlich.com"><span> Ivan Derlich</span></a>
     </div>
   );
 }

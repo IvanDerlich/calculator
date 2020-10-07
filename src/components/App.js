@@ -1,11 +1,8 @@
-/* eslint-disable react/no-unused-state */
-// eslint-disable-next-line no-unused-vars
-
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
+import Footer from './Footer';
 import calculate from '../logic/calculate';
-import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,11 +14,29 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({
+      total: '0',
+      next: '0',
+      operation: '0',
+    });
+  }
+
+  handleClick(buttonName) {
+    this.setState(prevState => ({
+      total: calculate(prevState, buttonName),
+      next: '0',
+      operation: '', // Maybe it is in the event. Research
+    }));
+  }
+
   render() {
+    const { total, next, operation } = this.state;
     return (
       <div className="App" id="app">
-        <Display />
+        <Display result={next} total={total} operation={operation} />
         <ButtonPanel />
+        <Footer />
       </div>
     );
   }

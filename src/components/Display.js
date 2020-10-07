@@ -4,10 +4,8 @@ import './Display.css';
 
 function Display({ result }) {
   return (
-    <div className="Display" id="button-panel">
-      <p>
-        {result}
-      </p>
+    <div className="display" id="button-panel">
+      <p>{result}</p>
     </div>
   );
 }

@@ -44,7 +44,7 @@ class App extends React.Component {
       this.setState({
         operation: char,
       });
-      const {total, next } = calculate(this.state, char);
+      const { total, next } = calculate(this.state, char);
       this.setState({
         total,
         next,

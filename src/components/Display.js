@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Display.css';
-import operate from '../logic/operate';
 
 function Display({ result, total, operation }) {
-  console.log(result, total, operation);
   return (
     <div className="display" id="button-panel">
       <p className="">{total}</p>

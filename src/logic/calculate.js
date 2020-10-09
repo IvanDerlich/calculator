@@ -1,6 +1,7 @@
 import operate from './operate';
 
 const calculate = (calculatorData, buttonName) => {
+  console.log(calculatorData);
   let { total, next } = calculatorData;
   const { operation } = calculatorData;
 
@@ -22,6 +23,9 @@ const calculate = (calculatorData, buttonName) => {
       break;
     default:
       total = operate(total, next, operation);
+      if (total === -1) {
+        total = 'Error';
+      }
   }
   return { total, next, operation };
 };

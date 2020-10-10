@@ -1,8 +1,6 @@
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
-  console.log(numberOne, numberTwo, operation, 'numberOne, numberTwo, operation');
-
   const firstNumber = Big(numberOne);
   const secondNumber = Big(numberTwo);
 
@@ -27,8 +25,6 @@ const operate = (numberOne, numberTwo, operation) => {
     default:
       return -1;
   }
-  console.log(numberOne, numberTwo, operation, 'numberOne, numberTwo, operation');
-  console.log(result, 'result');
   return result.toString();
 };
 

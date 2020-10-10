@@ -34,7 +34,6 @@ class App extends React.Component {
     const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
 
     if (numbers.includes(buttonName)) {
-      console.log(buttonName, 'Is a number');
       if (next === '0') {
         this.setState({
           next: buttonName,
@@ -45,14 +44,10 @@ class App extends React.Component {
         }));
       }
     } else { // if its not a number, its an operation
-      console.log(buttonName, 'Is an operation');
       await this.setState({
         operation: buttonName,
       });
-      console.log(this.state, 'this.state');
       const { total, next } = calculate(this.state);
-      console.log(total, 'total');
-
       this.setState({
         total,
         next,

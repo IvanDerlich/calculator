@@ -1,10 +1,8 @@
 import operate from './operate';
 
 const calculate = calculatorData => {
-  console.log(calculatorData, 'Calculator Data');
   let { total, next } = calculatorData;
   const { operation } = calculatorData;
-  console.log(total, next, operation, 'total, next, operation');
 
   if (operation === '÷' && next === '0') {
     return total === '0'

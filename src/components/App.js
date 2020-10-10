@@ -23,7 +23,7 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  async handleClick(buttonName) {
+  handleClick(buttonName) {
     const { next } = this.state;
     if (next.includes('.') && buttonName === '.') {
       return;

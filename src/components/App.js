@@ -26,14 +26,14 @@ class App extends React.Component {
 
   async handleClick(buttonName) {
     const { next } = this.state;
-    const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
-
-    if (buttonName === '.' && next.includes('.')) {
+    if (next.includes('.') && buttonName === '.') {
       return;
     }
 
+    const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
+
     if (numbers.includes(buttonName)) {
-    console.log(buttonName, 'Is a number');
+      console.log(buttonName, 'Is a number');
       if (next === '0') {
         this.setState({
           next: buttonName,
@@ -60,7 +60,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { total, next} = this.state;
+    const { total, next } = this.state;
     return (
       <div className="App" id="app">
         <Display next={next} total={total} />

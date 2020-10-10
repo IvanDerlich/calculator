@@ -20,7 +20,6 @@ class App extends React.Component {
     this.setState({
       total: '0',
       next: '0',
-      operation: 'operation',
     });
     this.handleClick = this.handleClick.bind(this);
   }
@@ -44,14 +43,7 @@ class App extends React.Component {
         }));
       }
     } else { // if its not a number, its an operation
-      await this.setState({
-        operation: buttonName,
-      });
-      const { total, next } = calculate(this.state);
-      this.setState({
-        total,
-        next,
-      });
+      this.setState(prevState => calculate(prevState, buttonName));
     }
   }
 

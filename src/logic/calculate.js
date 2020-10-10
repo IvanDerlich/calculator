@@ -1,13 +1,20 @@
 import operate from './operate';
 
-const calculate = calculatorData => {
+const calculate = (calculatorData, buttonName) => {
+  console.log(buttonName, 'Button Name inside calculate');
   let { total, next } = calculatorData;
-  const { operation } = calculatorData;
+  const operation = buttonName;
+
+  console.log(total, next, operation, 'total, next, operation');
 
   if (operation === '÷' && next === '0') {
     return total === '0'
       ? { total: 'Indetermination', next }
       : { total: 'Infinite', next };
+  }
+
+  if (total === 'Indetermination' || total === 'Infinite') {
+    return { total: 'Invalid', next };
   }
 
   switch (operation) {
@@ -34,7 +41,7 @@ const calculate = calculatorData => {
         total = 'Error';
       }
   }
-  return { total, next };
+  return { total, next, operation };
 };
 
 export default calculate;

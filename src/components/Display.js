@@ -5,7 +5,7 @@ import './Display.css';
 function Display({ next, total }) {
   return (
     <div className="display" id="button-panel">
-      <p className="">{total}</p>
+      <p>{total}</p>
       <p>{next}</p>
     </div>
   );

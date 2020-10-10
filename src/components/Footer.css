@@ -9,3 +9,9 @@
   bottom: 0;
   padding-top: 10px;
 }
+
+@media only screen and (max-height: 640px) {
+  .Footer{
+    position: static;
+  }
+}

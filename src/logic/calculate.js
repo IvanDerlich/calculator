@@ -1,11 +1,8 @@
 import operate from './operate';
 
 const calculate = (calculatorData, buttonName) => {
-  console.log(buttonName, 'Button Name inside calculate');
   let { total, next } = calculatorData;
   const operation = buttonName;
-
-  console.log(total, next, operation, 'total, next, operation');
 
   if (operation === '÷' && next === '0') {
     return total === '0'

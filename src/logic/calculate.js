@@ -1,18 +1,22 @@
 import operate from './operate';
 
-const calculate = (calculatorData, buttonName) => {
-  console.log(calculatorData);
+const calculate = calculatorData => {
+  console.log(calculatorData, 'Calculator Data');
   let { total, next } = calculatorData;
   const { operation } = calculatorData;
+  console.log(total, next, operation, 'total, next, operation');
 
-  switch (buttonName) {
+  if (operation === '÷' && next === '0') {
+    return total === '0'
+      ? { total: 'Indetermination', next }
+      : { total: 'Infinite', next };
+  }
+
+  switch (operation) {
     case '+/-':
       next = Number(next);
-      total = Number(total);
       next *= -1;
-      total *= -1;
       next = next.toString();
-      total = total.toString();
       break;
     case 'AC':
       next = '0';
@@ -21,13 +25,18 @@ const calculate = (calculatorData, buttonName) => {
     case '.':
       next += '.';
       break;
+    case '=':
+      total = next;
+      next = '0';
+      break;
     default:
       total = operate(total, next, operation);
+      next = '0';
       if (total === -1) {
         total = 'Error';
       }
   }
-  return { total, next, operation };
+  return { total, next };
 };
 
 export default calculate;

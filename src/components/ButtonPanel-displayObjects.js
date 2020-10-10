@@ -30,7 +30,7 @@ const displayObjects = [
       backgroundColor: '#dfdfdf',
     },
     {
-      buttonName: 'X',
+      buttonName: 'x',
     },
   ],
   [

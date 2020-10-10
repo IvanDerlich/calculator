@@ -2,28 +2,42 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 
-function Button({
-  buttonName, wide, backgroundColor, onClick,
-}) {
-  let className = 'button';
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  className += wide
-    ? ' wide'
-    : '';
+  handleClick(buttonName) {
+    const { clickHandler } = this.props;
+    return clickHandler(buttonName);
+  }
 
-  return (
-    <div
-      className={className}
-      onClick={onClick}
-      role="button"
-      tabIndex={0}
-      onKeyPress={onClick}
-      style={{ backgroundColor }}
-      id="button"
-    >
-      { buttonName }
-    </div>
-  );
+  render() {
+    const {
+      buttonName, wide, backgroundColor,
+    } = this.props;
+
+    let className = 'button';
+
+    className += wide
+      ? ' wide'
+      : '';
+
+    return (
+      <div
+        className={className}
+        onClick={() => this.handleClick(buttonName)}
+        role="button"
+        tabIndex={0}
+        onKeyPress={() => this.handleClick(buttonName)}
+        style={{ backgroundColor }}
+        id="button"
+      >
+        { buttonName }
+      </div>
+    );
+  }
 }
 
 Button.defaultProps = {
@@ -33,7 +47,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired, // Make this required when finished
+  clickHandler: PropTypes.func.isRequired, // Make this required when finished
   wide: PropTypes.bool,
   backgroundColor: PropTypes.string,
 };

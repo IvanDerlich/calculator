@@ -2,26 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Display.css';
 
-function Display({ result, total, operation }) {
+function Display({ next, total }) {
   return (
     <div className="display" id="button-panel">
       <p className="">{total}</p>
-      <p>{operation}</p>
-      <p>{result}</p>
+      <p>{next}</p>
     </div>
   );
 }
 
 Display.defaultProps = {
-  result: '0',
+  next: '0',
   total: '0',
-  operation: '=',
 };
 
 Display.propTypes = {
-  result: PropTypes.string,
+  next: PropTypes.string,
   total: PropTypes.string,
-  operation: PropTypes.string,
 };
 
 export default Display;

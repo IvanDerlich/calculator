@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-/* eslint-disable react/no-unused-state */
->>>>>>> development
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
@@ -25,30 +21,37 @@ class App extends React.Component {
       next: '0',
       operation: 'operation',
     });
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(event) {
-    const char = event.target.innerHTML;
+  async handleClick(buttonName) {
     const { next } = this.state;
     const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
 
-    console.log(char);
+    if (buttonName === '.' && next.includes('.')) {
+      return;
+    }
 
-    if (numbers.includes(char)) {
+    if (numbers.includes(buttonName)) {
+    console.log(buttonName, 'Is a number');
       if (next === '0') {
         this.setState({
-          next: char,
+          next: buttonName,
         });
       } else {
         this.setState(prevState => ({
-          next: prevState.next + char,
+          next: prevState.next + buttonName,
         }));
       }
     } else { // if its not a number, its an operation
-      this.setState({
-        operation: char,
+      console.log(buttonName, 'Is an operation');
+      await this.setState({
+        operation: buttonName,
       });
-      const { total, next } = calculate(this.state, char);
+      console.log(this.state, 'this.state');
+      const { total, next } = calculate(this.state);
+      console.log(total, 'total');
+
       this.setState({
         total,
         next,
@@ -57,11 +60,11 @@ class App extends React.Component {
   }
 
   render() {
-    const { total, next, operation } = this.state;
+    const { total, next} = this.state;
     return (
       <div className="App" id="app">
-        <Display result={next} total={total} operation={operation} />
-        <ButtonPanel onClick={this.handleClick} />
+        <Display next={next} total={total} />
+        <ButtonPanel clickHandler={this.handleClick} />
         <Footer />
       </div>
     );

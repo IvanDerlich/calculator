@@ -1,0 +1,17 @@
+.display {
+  height: 100px;
+  background-color: grey;
+  color: white;
+  width: 700px;
+  font-size: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding-right: 30px;
+  justify-content: space-evenly;
+}
+
+p {
+  color: white;
+}

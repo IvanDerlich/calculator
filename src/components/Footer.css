@@ -1,0 +1,17 @@
+.Footer {
+  text-align: center;
+  color: black;
+  margin-top: 20px;
+  background-color: rgb(255, 235, 206);
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  bottom: 0;
+  padding-top: 10px;
+}
+
+@media only screen and (max-height: 640px) {
+  .Footer {
+    position: static;
+  }
+}

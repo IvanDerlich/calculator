@@ -10,7 +10,13 @@ A calculator with these operacions:
 
 And a few minor operations to aid the execution of above operations
 
-## [Live Version](https://ivanderlich-calculator.netlify.app/)
+## Demo
+
+![](/img/1.png)
+![](/img/1.gif)
+
+
+## [Live Version](https://ivanderlich-calculator.herokuapp.com/)
 
 ## Instalation
 
@@ -54,5 +60,5 @@ And a few minor operations to aid the execution of above operations
   - https://github.com/microverseinc/project-react-calculator/blob/master/milestones/MILESTONE_5.md
   - https://microverse.pathwright.com/library/fast-track-curriculum/69047/path/step/44896095/
 
-## Repository
+## [Repository](https://github.com/IvanDerlich/Calculator)
 

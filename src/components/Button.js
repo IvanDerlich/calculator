@@ -2,31 +2,54 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 
-function Button({ buttonName, wide, color }) {
-  let className = 'button';
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  className += wide
-    ? ' wide'
-    : '';
+  handleClick(buttonName) {
+    const { clickHandler } = this.props;
+    return clickHandler(buttonName);
+  }
 
-  const styles = { backgroundColor: color };
+  render() {
+    const {
+      buttonName, wide, backgroundColor,
+    } = this.props;
 
-  return (
-    <div className={className} style={styles} id="button">
-      <p>{ buttonName}</p>
-    </div>
-  );
+    let className = 'button';
+
+    className += wide
+      ? ' wide'
+      : '';
+
+    return (
+      <div
+        className={className}
+        onClick={() => this.handleClick(buttonName)}
+        role="button"
+        tabIndex={0}
+        onKeyPress={() => this.handleClick(buttonName)}
+        style={{ backgroundColor }}
+        id="button"
+      >
+        { buttonName }
+      </div>
+    );
+  }
 }
 
 Button.defaultProps = {
   wide: false,
-  color: 'orange',
+  backgroundColor: 'orange',
 };
 
 Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
+  clickHandler: PropTypes.func.isRequired, // Make this required when finished
   wide: PropTypes.bool,
-  color: PropTypes.string,
+  backgroundColor: PropTypes.string,
 };
 
 export default Button;

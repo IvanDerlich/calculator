@@ -2,10 +2,15 @@
   text-align: center;
   font-size: 32px;
   border: 1px solid rgba(161, 161, 161, 0.651);
-  background-color: #dfdfdf;
+  background-color: orange;
   width: 25%;
+  padding-top: 25px;
 }
 
 .wide {
   width: 50%;
+}
+
+.button > p {
+  color: rgb(49, 49, 49);
 }

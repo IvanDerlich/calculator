@@ -1,36 +1,31 @@
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
-  const firstNumber = Big(Number(numberOne));
-  const secondNumber = Big(Number(numberTwo));
-  let result = 0;
+  const firstNumber = Big(numberOne);
+  const secondNumber = Big(numberTwo);
 
-  if (operation === '÷' && secondNumber === 0) {
-    return result === 0
-      ? 'Indetermination'
-      : 'Infinite';
-  }
+  let result;
 
   switch (operation) {
     case '+':
-      result = firstNumber + secondNumber;
+      result = firstNumber.plus(secondNumber);
       break;
     case '-':
-      result = firstNumber - secondNumber;
+      result = firstNumber.minus(secondNumber);
       break;
     case 'x':
-      result = firstNumber * secondNumber;
+      result = firstNumber.times(secondNumber);
       break;
     case '÷':
-      result = firstNumber / secondNumber;
+      result = firstNumber.div(secondNumber);
       break;
     case '%':
-      result = (firstNumber * secondNumber) / 100;
+      result = firstNumber.times(secondNumber) / 100;
       break;
     default:
       return -1;
   }
-  return result.toString;
+  return result.toString();
 };
 
 export default operate;

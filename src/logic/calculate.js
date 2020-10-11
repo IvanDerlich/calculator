@@ -10,7 +10,7 @@ const calculate = (calculatorData, buttonName) => {
       : { total: 'Infinite', next };
   }
 
-  if (total === 'Indetermination' || total === 'Infinite') {
+  if (operation !== 'AC' && (total === 'Indetermination' || total === 'Infinite')) {
     return { total: 'Invalid', next };
   }
 

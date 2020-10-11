@@ -4,14 +4,21 @@ const calculate = (calculatorData, buttonName) => {
   let { total, next } = calculatorData;
   const operation = buttonName;
 
+  if (
+    operation !== 'AC'
+    && (
+      total === 'Invalid'
+      || total === 'Indetermination'
+      || total === 'Infinite'
+    )
+  ) {
+    return { total: 'Invalid', next };
+  }
+
   if (operation === '÷' && next === '0') {
     return total === '0'
       ? { total: 'Indetermination', next }
       : { total: 'Infinite', next };
-  }
-
-  if (operation !== 'AC' && (total === 'Indetermination' || total === 'Infinite')) {
-    return { total: 'Invalid', next };
   }
 
   switch (operation) {

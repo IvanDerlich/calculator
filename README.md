@@ -1,19 +1,12 @@
 # React Calculator
 
-A calculator with these operacions:
-
-  - Addition
-  - Substraction
-  - Multiplication
-  - Division
-  - Percentage
-
-And a few minor operations to aid the execution of above operations
+<p id="description-calculator"> A classic calculator with the most common operations for daily life <p>
 
 ## Demo
 
-![](/img/1.png)
-![](/img/1.gif)
+![](/docs/1.png)
+
+<img src="docs/1.gif" id="main-image-calculator" />
 
 
 ## [Live Version](https://ivanderlich-calculator.herokuapp.com/)

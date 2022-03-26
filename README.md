@@ -24,7 +24,9 @@
 
 ## Technologies used
 
-  - React
+<ul id="tech-list-fakebook">
+  <li>React</li>
+</ul>
 
 ## Author
 

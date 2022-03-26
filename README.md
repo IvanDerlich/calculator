@@ -24,7 +24,7 @@
 
 ## Technologies used
 
-<ul id="tech-list-fakebook">
+<ul id="tech-list-calculator">
   <li>React</li>
 </ul>
 
